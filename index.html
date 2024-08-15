@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CropServices</title>
+    <link rel="stylesheet" href="./css/Root-Style.css" />
+
+    <link rel="stylesheet" href="./css/Index-Style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="left-container">
+          <img src="./media/cropservicesnew.png" alt="img" />
+        </div>
+
+        <div class="right-container">
+          <div class="input-container">
+            <input
+              type="email"
+              class="login-inp-email"
+              id="login-inp-email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              class="login-inp-password"
+              id="login-inp-password"
+              placeholder="Password"
+            />
+          </div>
+
+          <div class="middle-container">
+            <div class="remember-me-container">
+              <input
+                type="checkbox"
+                name="remember-me"
+                id="login-inp-remember-me"
+              />
+              <label for="login-inp-remember-me">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password</a>
+          </div>
+
+          <button class="btn-login">Login</button>
+
+          <div class="lower-container">
+            <label for="btn-create-account">Don't have an account?</label>
+            <a href="./html/Create-Account.html" class="btn-create-account">
+              Create an account</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      btnHandleSignup = () => {
+        window.location.href = "./html/Sign-Up.html";
+      };
+    </script>
+
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+      type="module"
+    ></script>
+
+    <script type="module" src="./js/Login-Script.js" defer></script>
+  </body>
+</html>
