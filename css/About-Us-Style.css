@@ -1,0 +1,31 @@
+body {
+  scroll-behavior: smooth;
+}
+
+header .btn-about {
+  background-color: #fff;
+  color: #000;
+  padding: 20px 40px;
+  border-radius: 20px 20px 0 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+
+  background-color: #fff;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.content h3 {
+  width: 70%;
+}
