@@ -1,0 +1,25 @@
+:root {
+  --img-main-bg: url(./../media/bg.png);
+  --font-main: arial;
+  --color-bg-gray: rgb(197, 197, 197);
+
+  --color-inp-gray: rgb(197, 197, 197);
+
+  --color-btn-red: #ff0e0e;
+  --color-btn-green: rgb(0, 202, 0);
+  --color-btn-green-1: #00bf63;
+  --color-btn-blue: #3685cd;
+
+  --color-btn-hover-red: #d60000;
+}
+
+* {
+  font-family: var(--font-main);
+}
+
+body {
+  background-image: var(--img-main-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

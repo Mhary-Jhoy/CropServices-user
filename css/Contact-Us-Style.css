@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.container h1,
+.container h2 {
+  width: 60%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+}
+
+.container button {
+  width: 250px;
+  height: 60px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: var(--color-btn-red);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: var(--color-btn-hover-red);
+}
+
+/* ================================================================================================================================== */
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 33.33%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.slide img {
+  /* width: 100%; */
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.slide-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.active-slide {
+  transform: scale(1);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}

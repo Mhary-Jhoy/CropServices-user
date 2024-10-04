@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CropServices</title>
+    <link rel="stylesheet" href="./../css/Root-Style.css" />
+    <link rel="stylesheet" href="./../css/Header-Style.css" />
+    <link rel="stylesheet" href="./../css/Contact-Us-Style.css" />
+  </head>
+  <body>
+    <header id="header-container"></header>
+
+    <main>
+      <div class="container">
+        <div class="slider-container">
+          <div class="slide-wrapper">
+            <div class="slide prev-slide">
+              <img src="./../media/images/machinery.jpg" alt="Machinery" />
+              <div class="slide-text">Machinery</div>
+            </div>
+            <div class="slide active-slide">
+              <img src="./../media/images/landscape-1.jpg" alt="Land" />
+              <div class="slide-text">LAND</div>
+            </div>
+            <div class="slide next-slide">
+              <img src="./../media/images/tools.jpg" alt="Tools" />
+              <div class="slide-text">Tools</div>
+            </div>
+          </div>
+        </div>
+
+        <h1>
+          ELEVATE YOUR FARMING EXPERIENCE WITH CROP SERVICES LAND, MACHINERY AND
+          TOOLS RENTAL.
+        </h1>
+        <h2>EXTEND YOUR PRODUCTIVITY BY HIRING EXTRA FARMERS FROM US</h2>
+
+        <button class="btn-contact-us">CONTACT US</button>
+      </div>
+    </main>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentIndex = 1;
+
+      function updateSlides() {
+        slides.forEach((slide, index) => {
+          const position = index - currentIndex;
+          slide.style.transform = `translateX(${position * 0}%) scale(${
+            position === 0 ? 1 : 0.8
+          })`;
+          slide.style.opacity = position === 0 ? 1 : 0.5;
+        });
+      }
+
+      function goToNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlides();
+      }
+
+      function goToPrevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlides();
+      }
+
+      slides.forEach((slide, index) => {
+        slide.addEventListener("click", () => {
+          if (index === currentIndex) {
+            handleRedirection(index);
+          } else if (
+            index ===
+            (currentIndex - 1 + slides.length) % slides.length
+          ) {
+            goToPrevSlide();
+          } else {
+            goToNextSlide();
+          }
+        });
+      });
+
+      function handleRedirection(index) {
+        if (index == 0) {
+          sessionStorage.setItem("productType", "machinery");
+        } else if (index == 1) {
+          sessionStorage.setItem("productType", "land");
+        } else {
+          sessionStorage.setItem("productType", "tools");
+        }
+
+        sessionStorage.setItem("currentDisplay", "allProducts");
+        window.location.href = "./Rent-Products.html";
+      }
+
+      updateSlides();
+    </script>
+
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+      type="module"
+    ></script>
+
+    <script type="module" src="./../js/Header-Script.js" defer></script>
+  </body>
+</html>
